@@ -725,10 +725,11 @@ public class Main extends Application {
                         Label resultLabel = new Label("Results will show up here.");
                         TextArea taskTextArea = new TextArea();
                         Button loadReportButton = new Button("Load Report");
+                        Button backButtonToButtonScene = new Button("Back");
                         
                         VBox taskLayout = new VBox(10);
                         taskLayout.setAlignment(Pos.CENTER);
-                        taskLayout.getChildren().addAll(taskTextArea, loadReportButton, resultLabel, backButton);
+                        taskLayout.getChildren().addAll(taskTextArea, loadReportButton, resultLabel, backButtonToButtonScene);
 
                         Scene taskScene = new Scene(taskLayout, 600, 500);
                         primaryStage.setScene(taskScene);
@@ -740,6 +741,10 @@ public class Main extends Application {
                             }
                         	resultLabel.setText("Report loaded succesfully.");
                         	loadReportButton.setDisable(true);
+                        });
+                        
+                        backButtonToButtonScene.setOnAction(backToButtonEvent -> {
+                            primaryStage.setScene(buttonScene); // Switch to the "Button" scene
                         });
                     });
                     
