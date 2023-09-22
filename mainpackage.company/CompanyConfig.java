@@ -106,7 +106,7 @@ public class CompanyConfig {
     }
 
     @PostConstruct
-    public void initializeREPNUMFromDatabase(JdbcTemplate jdbcTemplate) {
+    public void initializeREPNUMFromDatabase() {
     	String selectQuery = "SELECT REPNUM FROM COMPANYCONFIG";
         int initialREPNUM = jdbcTemplate.queryForObject(selectQuery, Integer.class);
         REPNUM = initialREPNUM;
