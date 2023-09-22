@@ -2,6 +2,7 @@ package mainpackage.company;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,9 @@ public class CompanyConfig {
     private static int hourOfTask2 = 3;
     private static int hourOfTask3 = 4;
 
+	@Autowired
+    private JdbcTemplate jdbcTemplate;
+	
     public static int getIANUM() {
         return IANUM;
     }
